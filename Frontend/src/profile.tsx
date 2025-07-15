@@ -226,7 +226,7 @@ export default function Profile() {
   }, [])
 
   useEffect(() => {
-    fetch("http://localhost:8081/teamSummary/4")
+    fetch("http://localhost:8081/teamSummary/" + localStorage.getItem("uID"))
       .then((res) => res.json())
       .then((data) => setTeamSummary(data))
       .catch((err) => console.error("Failed to fetch team summary:", err));

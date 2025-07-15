@@ -9,6 +9,7 @@ const navigationItems = [
   { name: "Pokédex", href: "/pokedex", icon: BookOpen },
   { name: "My Pokémon", href: "/my-pokemon", icon: User },
   { name: "Market", href: "/market", icon: ShoppingCart },
+  { name: "Search User", href: "/search-user", icon: User }
 ]
 
 export default function Navbar({ currentPage, setCurrentPage }) {

@@ -1,3 +1,4 @@
+const mysqlPromise = require('mysql2/promise');
 
 module.exports = (app, db) => {
     
@@ -442,6 +443,35 @@ app.get('/userPokemon', (req, res) => {
 
     return res.json(formatted);
   });
+});
+
+app.get("/searchUser", async (req, res) => {
+  const { query } = req.query;
+
+  if (!query) {
+    return res.status(400).json({ error: "No user found" });
+  }
+
+  try {
+    const db = await mysqlPromise.createConnection({
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME
+    });
+
+    const isNumeric = /^\d+$/.test(query);
+    const [results] = isNumeric
+      ? await db.execute("SELECT uID, name, username FROM User WHERE uID = ?", [query])
+      : await db.execute("SELECT uID, name, username FROM User WHERE username LIKE ?", [`%${query}%`]);
+
+    await db.end();
+    res.json(results);
+  } catch (err) {
+    console.error("Search error:", err);
+    res.status(500).json({ error: "Server error while searching" });
+  }
 });
 
 

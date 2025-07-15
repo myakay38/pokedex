@@ -9,6 +9,8 @@ import Profile from './profile.js'
 import MyPokedex from './my-pokemon.js'
 import LoginPage from './login.js'
 import CreateAccountPage from './create-account.js'
+import SearchUserPage from './search-user.js'
+import SearchProfile from './search-profiles.js'
 
 function MainApp() {
   const [currentPage, setCurrentPage] = useState("pokedex")
@@ -30,7 +32,9 @@ function MainApp() {
           <Route path="/pokedex/:id" element={<PokemonDetail />} />
           <Route path="/my-pokemon/:pID/:id" element={<MyPokeDetail />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/search-profile/:uID" element={<SearchProfile />} />
           <Route path="/my-pokemon" element={<MyPokedex />} />
+          <Route path="/search-user" element={<SearchUserPage />} />
         </Routes>
       </main>
     </div>

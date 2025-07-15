@@ -1,0 +1,86 @@
+/* search-user.css */
+.search-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+}
+
+.search-result-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.pokedex-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-avatar {
+  width: 50px;
+  height: 50px;
+  background: #cfcfcf;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.card-name span {
+    color: #525252;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.card-id {
+    text-align: left;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.no-results {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
